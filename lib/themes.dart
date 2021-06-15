@@ -14,7 +14,7 @@ class CustomTheme with ChangeNotifier {
   static ThemeData get lightTheme {
     return ThemeData(
       primaryColor: Colors.lightBlue,
-      accentColor: Colors.white,
+      accentColor: Colors.purple,
       backgroundColor: Colors.white,
       scaffoldBackgroundColor: Colors.white,
       textTheme: const TextTheme(

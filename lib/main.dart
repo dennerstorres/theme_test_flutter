@@ -99,13 +99,25 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               ),
             ),
-            const Padding(
-              padding: EdgeInsets.all(8.0),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
               child: Card(
                 child: ListTile(
-                  leading: Icon(Icons.access_alarm),
-                  title: Text("On Jack Tall Canoodle"),
-                  subtitle: Text("Put a keep are you, aim"),
+                  leading: const Icon(Icons.access_alarm),
+                  title: const Text("On Jack Tall Canoodle"),
+                  subtitle: const Text("Put a keep are you, aim"),
+                  trailing: SizedBox(
+                    width: 60,
+                    child: Row(
+                      children: const [
+                        Icon(Icons.play_arrow),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        Icon(Icons.stop),
+                      ],
+                    ),
+                  ),
                 ),
               ),
             ),
@@ -123,8 +135,27 @@ class _MyHomePageState extends State<MyHomePage> {
               onPressed: () {},
               child: const Text("Massageia"),
             ),
+            const SizedBox(
+              height: 20,
+            ),
+            Container(
+              width: double.infinity - 50,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(25),
+              ),
+              child: TextButton(
+                child: const Text(
+                  'LOG IN',
+                ),
+                onPressed: () {},
+              ),
+            ),
           ],
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: const Icon(Icons.thumb_up_alt_rounded),
       ),
     );
   }
