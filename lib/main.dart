@@ -24,8 +24,9 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: const MyHomePage(title: 'Flutter Theme Demo'),
-      title: 'Flutter Theme Demo',
+      home: const MyHomePage(title: 'Teste de temas'),
+      title: 'Teste de temas',
+      debugShowCheckedModeBanner: false,
       theme: CustomTheme.lightTheme,
       darkTheme: CustomTheme.darkTheme,
       themeMode: currentTheme.currentTheme,
@@ -44,19 +45,17 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
+    //final theme = Theme.of(context);
 
     return Scaffold(
       appBar: AppBar(
         title: Text(
           widget.title,
-          style: TextStyle(
-            color: theme.accentColor,
-          ),
         ),
         actions: [
           IconButton(
-            icon: const Icon(Icons.brightness_4_rounded),
+            icon:
+                const Icon(Icons.brightness_2_rounded), // brightness_4_rounded
             onPressed: () {
               currentTheme.toggleTheme();
             },
@@ -66,9 +65,63 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: const <Widget>[
-            Text(
-              'Fluter Themes Demo',
+          children: <Widget>[
+            const Text(
+              'Teste de temas',
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            Padding(
+              padding: const EdgeInsets.all(18.0),
+              child: TextFormField(
+                onChanged: (value) {},
+                decoration: const InputDecoration(
+                  labelText: "Digite aqui",
+                  border: OutlineInputBorder(
+                    borderSide: BorderSide(width: 1),
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(10),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            Padding(
+              padding: const EdgeInsets.all(25.0),
+              child: TextFormField(
+                onChanged: (value) {},
+                decoration: const InputDecoration(
+                  labelText: "Digite a senha",
+                ),
+              ),
+            ),
+            const Padding(
+              padding: EdgeInsets.all(8.0),
+              child: Card(
+                child: ListTile(
+                  leading: Icon(Icons.access_alarm),
+                  title: Text("On Jack Tall Canoodle"),
+                  subtitle: Text("Put a keep are you, aim"),
+                ),
+              ),
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            TextButton(
+              onPressed: () {},
+              child: const Text("Aperta"),
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            ElevatedButton(
+              onPressed: () {},
+              child: const Text("Massageia"),
             ),
           ],
         ),
